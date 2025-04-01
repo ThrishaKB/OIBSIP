@@ -1,0 +1,301 @@
+:root {
+    /* Pastel Theme (Default) */
+    --pastel-bg: #fff0f5;
+    --pastel-primary: #ffb6c1;
+    --pastel-secondary: #b5ead7;
+    --pastel-accent: #c7ceea;
+    --pastel-text: #5a5a5a;
+    --pastel-shadow: rgba(255, 182, 193, 0.3);
+
+    /* Dark Theme */
+    --dark-bg: #1a1a1a;
+    --dark-primary: #4d4d4d;
+    --dark-secondary: #333333;
+    --dark-accent: #00ff9d;
+    --dark-text: #e6e6e6;
+    --dark-shadow: rgba(0, 255, 157, 0.3);
+
+    /* Nature Theme */
+    --nature-bg: #f0fff0;
+    --nature-primary: #8fbc8f;
+    --nature-secondary: #d8e2dc;
+    --nature-accent: #a5d6a7;
+    --nature-text: #2e7d32;
+    --nature-shadow: rgba(143, 188, 143, 0.3);
+
+    /* Galaxy Theme */
+    --galaxy-bg: #0f0524;
+    --galaxy-primary: #6a0dad;
+    --galaxy-secondary: #301934;
+    --galaxy-accent: #9370db;
+    --galaxy-text: #e6e6fa;
+    --galaxy-shadow: rgba(106, 13, 173, 0.3);
+
+    /* Retro Theme */
+    --retro-bg: #f5f5dc;
+    --retro-primary: #ff6b6b;
+    --retro-secondary: #4ecdc4;
+    --retro-accent: #ffe66d;
+    --retro-text: #2f2f2f;
+    --retro-shadow: rgba(255, 107, 107, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px var(--theme-shadow);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-family: 'Short Stack', cursive;
+    margin-bottom: 15px;
+}
+
+.theme-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.theme-btn {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--theme-primary);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--theme-shadow);
+}
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid var(--theme-primary);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    font-size: 16px;
+}
+
+#task-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--theme-shadow);
+}
+
+#add-btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--theme-primary);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#add-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--theme-shadow);
+}
+
+.task-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.pending-tasks, .completed-tasks {
+    background-color: var(--theme-secondary);
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+ul {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: var(--theme-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.task-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--theme-primary);
+}
+
+.task-text {
+    flex: 1;
+    margin: 0 15px;
+    word-break: break-word;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.task-btn:hover {
+    transform: scale(1.2);
+}
+
+.complete-btn {
+    color: #4caf50;
+}
+
+.edit-btn {
+    color: #ff9800;
+}
+
+.delete-btn {
+    color: #f44336;
+}
+
+.task-timestamp {
+    font-size: 12px;
+    color: var(--theme-text);
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--theme-primary);
+    opacity: 0.7;
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Theme Classes */
+.pastel-theme {
+    --theme-bg: var(--pastel-bg);
+    --theme-primary: var(--pastel-primary);
+    --theme-secondary: var(--pastel-secondary);
+    --theme-accent: var(--pastel-accent);
+    --theme-text: var(--pastel-text);
+    --theme-shadow: var(--pastel-shadow);
+}
+
+.dark-theme {
+    --theme-bg: var(--dark-bg);
+    --theme-primary: var(--dark-primary);
+    --theme-secondary: var(--dark-secondary);
+    --theme-accent: var(--dark-accent);
+    --theme-text: var(--dark-text);
+    --theme-shadow: var(--dark-shadow);
+}
+
+.nature-theme {
+    --theme-bg: var(--nature-bg);
+    --theme-primary: var(--nature-primary);
+    --theme-secondary: var(--nature-secondary);
+    --theme-accent: var(--nature-accent);
+    --theme-text: var(--nature-text);
+    --theme-shadow: var(--nature-shadow);
+}
+
+.galaxy-theme {
+    --theme-bg: var(--galaxy-bg);
+    --theme-primary: var(--galaxy-primary);
+    --theme-secondary: var(--galaxy-secondary);
+    --theme-accent: var(--galaxy-accent);
+    --theme-text: var(--galaxy-text);
+    --theme-shadow: var(--galaxy-shadow);
+}
+
+.retro-theme {
+    --theme-bg: var(--retro-bg);
+    --theme-primary: var(--retro-primary);
+    --theme-secondary: var(--retro-secondary);
+    --theme-accent: var(--retro-accent);
+    --theme-text: var(--retro-text);
+    --theme-shadow: var(--retro-shadow);
+}
+
+@media (max-width: 768px) {
+    .task-lists {
+        grid-template-columns: 1fr;
+    }
+}

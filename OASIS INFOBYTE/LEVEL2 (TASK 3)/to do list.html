@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Short+Stack&display=swap" rel="stylesheet">
+</head>
+<body class="pastel-theme">
+    <div class="container">
+        <header>
+            <h1>✨ Cute To-Do List ✨</h1>
+            <div class="theme-selector">
+                <button class="theme-btn pastel" data-theme="pastel" title="Pastel Paradise">🎀</button>
+                <button class="theme-btn dark" data-theme="dark" title="Dark Mode Elegance">🌙</button>
+                <button class="theme-btn nature" data-theme="nature" title="Nature Bliss">🌻</button>
+                <button class="theme-btn galaxy" data-theme="galaxy" title="Galaxy Glow">💜</button>
+                <button class="theme-btn retro" data-theme="retro" title="Retro Pixel">🕹</button>
+            </div>
+        </header>
+
+        <div class="add-task">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-btn">➕ Add</button>
+        </div>
+
+        <div class="task-lists">
+            <div class="pending-tasks">
+                <h2>📝 Pending Tasks</h2>
+                <ul id="pending-list"></ul>
+            </div>
+
+            <div class="completed-tasks">
+                <h2>✅ Completed Tasks</h2>
+                <ul id="completed-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

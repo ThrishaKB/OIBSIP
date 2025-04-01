@@ -1,0 +1,128 @@
+<!-- Keep reset and default stylesheets same -->
+
+<div class="landing-page-container1">
+    <div class="landing-page-top-container">
+      <nav class="landing-page-navbar">
+        <a href="index.html" class="landing-page-navlink">
+          <h1 class="landing-page-body-forge">Elite Fitness</h1>
+        </a>
+        <div class="landing-page-right-side1">
+          <div class="landing-page-links-container1">
+            <span class="landing-page-text10">Home</span>
+            <span class="landing-page-text11">About</span>
+            <span class="landing-page-text12">Membership</span>
+            <span class="landing-page-text13">Contact</span>
+          </div>
+          <a href="#main-section" class="landing-page-link10">
+            <solid-button-wrapper class="solid-button-wrapper">
+              <div class="solid-button-container">
+                <button class="solid-button-button button Button">
+                  <span>Start Trial</span>
+                </button>
+              </div>
+            </solid-button-wrapper>
+          </a>
+        </div>
+        <!-- Burger menu content remains same -->
+      </nav>
+      <div class="landing-page-hero">
+        <div class="landing-page-content-container">
+          <h1 class="Heading landing-page-text19">Transform Your Body</h1>
+          <h2 class="Subheading landing-page-subheading">
+            Start your fitness journey today
+          </h2>
+          <span class="landing-page-text20">
+            <span>Professional trainers, advanced equipment,</span>
+            <br />
+            <span>and personalized workout plans</span>
+          </span>
+          <solid-button-wrapper-hewx class="solid-button-wrapper-hewx">
+            <div class="solid-button-container2">
+              <button class="solid-button-button2 button Button">
+                <span>Join Now</span>
+              </button>
+            </div>
+          </solid-button-wrapper-hewx>
+        </div>
+      </div>
+    </div>
+    <div id="main-section" class="landing-page-main">
+      <h1>Our Programs</h1>
+      <span class="landing-page-text25">Featured</span>
+      <div class="landing-page-cards-container">
+        <!-- Updated gym program cards -->
+        <place-card-wrapper class="place-card-wrapper">
+          <div class="place-card-container1">
+            <img
+              alt="weightlifting"
+              src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000"
+              class="place-card-image"
+            />
+            <div class="place-card-container2">
+              <span class="place-card-text1"><span>Strength Training</span></span>
+              <span class="place-card-text2">
+                Build muscle and increase power with our expert-led strength programs
+              </span>
+              <outline-button-wrapper class="outline-button-wrapper">
+                <div class="outline-button-container">
+                  <button class="outline-button-button button Button">
+                    <span>Learn More</span>
+                  </button>
+                </div>
+              </outline-button-wrapper>
+            </div>
+          </div>
+        </place-card-wrapper>
+
+        <place-card-wrapper-u8ro class="place-card-wrapper-u8ro">
+          <div class="place-card-container3">
+            <img
+              alt="crossfit"
+              src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000"
+              class="place-card-image1"
+            />
+            <div class="place-card-container4">
+              <span class="place-card-text3"><span>CrossFit</span></span>
+              <span class="place-card-text4">
+                High-intensity functional training in group sessions
+              </span>
+              <outline-button-wrapper-cjjw
+                class="outline-button-wrapper-cjjw"
+              >
+                <div class="outline-button-container1">
+                  <button class="outline-button-button1 button Button">
+                    <span>Learn More</span>
+                  </button>
+                </div>
+              </outline-button-wrapper-cjjw>
+            </div>
+          </div>
+        </place-card-wrapper-u8ro>
+
+        <!-- Additional cards updated for yoga, boxing, etc. -->
+        
+      </div>
+    </div>
+    <div class="landing-page-footer">
+      <div class="landing-page-menu">
+        <h1>Elite Fitness</h1>
+        <div class="landing-page-links-container3">
+          <div class="landing-page-container2">
+            <a href="#" class="landing-page-link15">Membership Plans</a>
+            <a href="#" class="landing-page-link16">Personal Training</a>
+            <a href="#" class="landing-page-link17">Special Offers</a>
+            <a href="#" class="landing-page-link18">FAQ</a>
+          </div>
+          <div class="landing-page-container3">
+            <a href="#" class="landing-page-link19">About Us</a>
+            <a href="#" class="landing-page-link20">Careers</a>
+            <a href="#" class="landing-page-link21">Privacy Policy</a>
+            <a href="#" class="landing-page-link22">Terms</a>
+          </div>
+        </div>
+        <!-- Keep social media section same -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Keep script tags -->

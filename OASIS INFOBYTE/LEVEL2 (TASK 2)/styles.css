@@ -1,0 +1,432 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.8;
+    background: linear-gradient(135deg, #fdfbf6 0%, #fff7ed 50%, #ffecd5 100%);
+    min-height: 100vh;
+    color: #2d3748;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.3);
+    z-index: 0;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-out;
+}
+
+.hero:hover::before {
+    transform: scale(1.15);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+/* Main Content */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* Introduction */
+.introduction {
+    margin-bottom: 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.1);
+}
+
+.introduction p {
+    font-size: 1.5rem;
+    color: #4a5568;
+    line-height: 2;
+    font-style: italic;
+}
+
+/* Image Gallery */
+.image-gallery {
+    margin-bottom: 6rem;
+}
+
+.image-gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: #1a202c;
+    letter-spacing: 0.1em;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    font-size: 1.25rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Achievements Grid */
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ea580c, #f97316);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    color: #ea580c;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .card-header svg {
+    transform: scale(1.1);
+}
+
+.card-header h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #1a202c;
+    letter-spacing: 0.05em;
+}
+
+.achievement-card p {
+    color: #4a5568;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+/* Quotes Section */
+.quotes {
+    margin-bottom: 6rem;
+    padding: 0 2rem;
+}
+
+.quote-card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.quote-card svg {
+    color: #ea580c;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.quote-card blockquote {
+    font-size: 2rem;
+    font-style: italic;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.quote-author {
+    font-size: 1.25rem;
+    color: #718096;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+}
+
+/* Impact Section */
+.impact {
+    text-align: center;
+    margin-bottom: 6rem;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.impact h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #1a202c;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+}
+
+.impact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #ea580c, #f97316);
+}
+
+.impact p {
+    font-size: 1.25rem;
+    color: #4a5568;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #1a202c, #2d3748);
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ea580c, #f97316);
+}
+
+footer p {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+    
+    .introduction {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        margin: 0 auto;
+    }
+    
+    .introduction p {
+        font-size: 1.25rem;
+    }
+    
+    .quote-card blockquote {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-card {
+        padding: 2rem;
+    }
+    
+    .quote-card blockquote {
+        font-size: 1.5rem;
+    }
+    
+    .impact h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-card {
+        padding: 1.5rem;
+    }
+    
+    .impact {
+        padding: 2rem 1rem;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+}
